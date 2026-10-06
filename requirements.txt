@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy
+pandas
+contractions
+tqdm
+torch
+datasets
+transformers
+scikit-learn
+pdfplumber
+seaborn
+matplotlib
+jupyter
+torchvision
+streamlit
+sentence-transformers
