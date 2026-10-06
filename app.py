@@ -173,9 +173,6 @@ def get_tfidf_keywords(jd_text, resume_text, top_n=25):
 
 
 # --- Main App ---
-with st.spinner("Loading AI Model (first time only)..."):
-    model = load_model()
-
 col1, col2 = st.columns(2, gap="large")
 
 with col1:
@@ -201,7 +198,8 @@ if st.button("⚡ Analyze Match"):
     elif not jd_text.strip():
         st.error("⚠️ Please paste a job description.")
     else:
-        with st.spinner("🔍 Analyzing your resume against the job description..."):
+        with st.spinner("🤖 Loading AI Model & Analyzing... (first run may take ~30s)"):
+            model = load_model()
             # 1. Extract & Clean
             raw_resume = extract_text_from_pdf(uploaded_file)
             cleaned_resume = text_cleaning(raw_resume)
