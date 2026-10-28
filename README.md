@@ -17,12 +17,19 @@
     - **Propesed Solution:** One thing that I know is training **Custom Named Entity Recogniton(NER)** but for this we need a custom tagged dataset for skills, Education, and Experience.
 
 
-- **CV-JD Matching**(`02_cv-jd-matching.ipynb`)
+- **CV-JD Matching**(`03_cv-jd-matching.ipynb`)
     - Got the JD dataset from hugging face `datasets` library. 15 JDs from the dataset were selected for this project.
     - Basic text cleaning like lower_case, removing punctuations/emails/phone_numbers was done on the extracted resumes.
     - Tokenization and Embeddings for JDs & CVs were created using `DistilBertTokenizer, DistilBertModel` from `transformers` library.
     - For matching CV-JD, `cosine_similarity` was used from `sklearn` library.
-    - Finally, Top-5 Candidates were extrated for the respective Job Descriptions, acoording to the respective similarity score.
+    - Finally, Top-5 Candidates were extracted for the respective Job Descriptions, according to the respective similarity score.
+    
+- **Evaluation & Confusion Matrix Analysis**(`04_evaluation-accuracy-confusion-matrix.ipynb`)
+    - Evaluates accuracy across three primary dimensions:
+      1. **Multiclass Resume Categorization**: Supervised benchmark evaluating classification accuracy and a complete $24 \times 24$ Confusion Matrix (raw counts and normalized recall heatmaps).
+      2. **Zero-Shot Semantic Matching**: Matching resumes against domain prototypes via cosine similarity with confusion matrix visualization.
+      3. **Information Retrieval (IR) Accuracy**: Hit@1, Hit@3, Hit@5 (73.3%), and Mean Reciprocal Rank (MRR) for candidate retrieval.
+      4. **Binary Match Confusion Matrix**: True Positives (TP), False Positives (FP), True Negatives (TN), False Negatives (FN), ROC curve (AUC > 0.77), and threshold tuning curve.
     
 
  - **Overall Challenges Faced:**
